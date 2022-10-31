@@ -1,0 +1,26 @@
+<select [value]="font" (change)="changeFont($event)">
+  <option>Arial</option>
+  <option>Comic Sans MS</option>
+  <option>Segue</option>
+</select>
+<h1 [style.fontFamily]="font">IT WORKS!</h1>
+<p>Hello, my name is {{name}}</p>
+<input
+  type="text"
+  name="name-input"
+  id="name-input"
+  [value]="name"
+  (keyup)="updateName($event)"
+  [class.error]="name.length==0"
+>
+
+<p>{{getName()}}</p>
+<p>The input below uses ng Model</p>
+<input 
+  type="text"
+  name="name-input"
+  id="name-input"
+  [(ngModel)]="name"
+  [class.error]="name.length==0"
+>
+<app-child></app-child>
